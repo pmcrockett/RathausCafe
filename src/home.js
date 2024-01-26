@@ -1,7 +1,7 @@
 export default function() {
     let mainContent = document.createElement("div");
     mainContent.classList.add("main-content");
-    
+
     let introContainer = document.createElement("div");
     introContainer.classList.add("intro-container");
     mainContent.appendChild(introContainer);
@@ -21,7 +21,7 @@ export default function() {
     introText.textContent = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam necessitatibus a numquam, modi, harum tempore excepturi quasi dignissimos voluptatum molestiae saepe. Maxime, repellat consequatur veritatis eos iure amet consequuntur recusandae.";
     introContainer.appendChild(introText);
 
-    let hoursHeader = document.createElement("h3");
+    let hoursHeader = document.createElement("h2");
     hoursHeader.textContent = "Hours";
     hoursHeader.classList.add("center-h");
     mainContent.appendChild(hoursHeader);
@@ -31,8 +31,8 @@ export default function() {
     mainContent.appendChild(hoursContainer);
 
     const hoursText = [
-        ["Mon – Thurs", "10 am", "–", "8pm"],
-        ["Fri", "8 am", "–", "6pm"],
+        ["Mon – Thurs", "10 am", "–", "5pm"],
+        ["Fri", "8 am", "–", "5pm"],
         ["Sat", "8 am", "–", "4pm"],
         ["Sun", "8 am", "–", "2pm"],
     ]
