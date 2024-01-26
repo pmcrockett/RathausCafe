@@ -53,7 +53,7 @@ nav {
     font-weight: bold;
 }
 
-.main-content {
+.home-content {
     background-color: var(--button-bg-col);
     padding: var(--margin-width);
     border-radius: 0px 0px 10px 10px;
@@ -83,7 +83,7 @@ nav {
     margin-bottom: calc(var(--margin-width) * 0.5);
 }
 
-.main-img {
+.home-img {
     width: calc(var(--content-width) * 0.5);
     float: left;
     margin-right: var(--margin-width);
