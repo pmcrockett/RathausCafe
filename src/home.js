@@ -1,9 +1,10 @@
 export default function() {
-    let homeContent = document.createElement("div");
-    homeContent.classList.add("home-content");
+    let mainContent = document.createElement("div");
+    mainContent.classList.add("main-content");
+    
     let introContainer = document.createElement("div");
     introContainer.classList.add("intro-container");
-    homeContent.appendChild(introContainer);
+    mainContent.appendChild(introContainer);
 
     let introHeader = document.createElement("h1");
     introHeader.classList.add("center-h");
@@ -23,11 +24,11 @@ export default function() {
     let hoursHeader = document.createElement("h3");
     hoursHeader.textContent = "Hours";
     hoursHeader.classList.add("center-h");
-    homeContent.appendChild(hoursHeader);
+    mainContent.appendChild(hoursHeader);
 
     let hoursContainer = document.createElement("div");
     hoursContainer.classList.add("hours-container");
-    homeContent.appendChild(hoursContainer);
+    mainContent.appendChild(hoursContainer);
 
     const hoursText = [
         ["Mon – Thurs", "10 am", "–", "8pm"],
@@ -51,5 +52,5 @@ export default function() {
         }
     }
 
-    return homeContent;
+    return mainContent;
 };

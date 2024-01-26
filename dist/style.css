@@ -53,7 +53,7 @@ nav {
     font-weight: bold;
 }
 
-.home-content {
+.main-content {
     background-color: var(--button-bg-col);
     padding: var(--margin-width);
     border-radius: 0px 0px 10px 10px;
@@ -68,6 +68,7 @@ nav {
 
 .menu-container {
     display: grid;
+    margin-top: var(--margin-width);
     gap: var(--margin-width);
     grid-template-columns: repeat(auto-fill, minmax(256px, 1fr));
     grid-auto-rows: minmax(256px, max-content);
@@ -122,4 +123,8 @@ nav {
     grid-template-columns: var(--column-half-w) auto;
     grid-auto-flow: row;
     grid-auto-rows: auto;
+}
+
+.hidden {
+    display: none;
 }
