@@ -8,7 +8,8 @@ export default function() {
     mainContent.appendChild(menuHeader);
 
     let menuText = document.createElement("p");
-    menuText.textContent = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam necessitatibus a numquam, modi, harum tempore excepturi quasi dignissimos voluptatum molestiae saepe. Maxime, repellat consequatur veritatis eos iure amet consequuntur recusandae.";
+    menuText.classList.add("bottom-spacer");
+    menuText.textContent = "All menu selections are guaranteed to be made with the cheapest ingredients we can find, and all of our recipes were created by minimum-wage employees with no culinary experience. We love our food so you don't have to.";
     mainContent.appendChild(menuText);
 
     let menuSections = [
@@ -38,7 +39,7 @@ export default function() {
                 "Burnt Toast with Burnt Bacon",
                 "$9",
                 "./img/breakfast.jpg",
-                "Bread blackened so much that you can't even tell how stale it is. The bacon matches the toast."
+                "Bread so charred that you won't even notice how stale it is. The bacon matches the toast."
             ]
         ],
         // Lunch
@@ -121,7 +122,7 @@ export default function() {
             let pic = document.createElement("img");
             pic.setAttribute("src", menuItems[i][j][2]);
             pic.setAttribute("alt", menuItems[i][j][0]);
-            pic.classList.add("menu-img");
+            pic.classList.add("menu-img", "shadow");
             menuCard.appendChild(pic);
 
             let text = document.createElement("p");

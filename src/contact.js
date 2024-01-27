@@ -3,7 +3,6 @@ export default function() {
     mainContent.classList.add("main-content");
 
     let contactContainer = document.createElement("div");
-    contactContainer.classList.add("intro-container");
     mainContent.appendChild(contactContainer);
 
     let contactHeader = document.createElement("h1");
@@ -11,21 +10,25 @@ export default function() {
     contactHeader.textContent = "Contact us";
     contactContainer.appendChild(contactHeader);
 
+    let card = document.createElement("div");
+    card.classList.add("menu-card", "shadow", "size-to-map");
+    contactContainer.appendChild(card);
+    
     let contactMap = document.createElement("iframe");
     contactMap.setAttribute("src", "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d21522.723807459097!2d-122.37160199978854!3d47.60006890924782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1706256753556!5m2!1sen!2sus");
     contactMap.setAttribute("allowfullscreen", "");
     contactMap.setAttribute("loading", "lazy");
     contactMap.setAttribute("referrerpolicy", "no-referrer-when-downgrade");
     contactMap.classList.add("map", "shadow");
-    contactContainer.appendChild(contactMap);
+    card.appendChild(contactMap);
 
     let contactText = document.createElement("p");
-    contactText.textContent = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam necessitatibus a numquam, modi, harum tempore excepturi quasi dignissimos voluptatum molestiae saepe. Maxime, repellat consequatur veritatis eos iure amet consequuntur recusandae.";
-    contactContainer.appendChild(contactText);
+    contactText.textContent = "We'd rather you not speak to us, but if you must, here's how:";
+    card.appendChild(contactText);
 
     let infoContainer = document.createElement("div");
     infoContainer.classList.add("contact-info-container");
-    contactContainer.appendChild(infoContainer);
+    card.appendChild(infoContainer);
 
     const infoText = [
         ["Phone"],

@@ -2,14 +2,18 @@ export default function() {
     let mainContent = document.createElement("div");
     mainContent.classList.add("main-content");
 
-    let introContainer = document.createElement("div");
-    introContainer.classList.add("intro-container");
-    mainContent.appendChild(introContainer);
-
     let introHeader = document.createElement("h1");
     introHeader.classList.add("center-h");
     introHeader.textContent = "Welcome to the Rathaus Cafe";
-    introContainer.appendChild(introHeader);
+    mainContent.appendChild(introHeader);
+
+    let card = document.createElement("div");
+    card.classList.add("menu-card", "shadow", "bottom-spacer");
+    mainContent.appendChild(card);
+
+    let introContainer = document.createElement("div");
+    introContainer.classList.add("intro-container");
+    card.appendChild(introContainer);
 
     let introImg = document.createElement("img");
     introImg.setAttribute("src", "./img/restaurant_interior.jpg");
@@ -18,8 +22,14 @@ export default function() {
     introContainer.appendChild(introImg);
 
     let introText = document.createElement("p");
-    introText.textContent = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quam necessitatibus a numquam, modi, harum tempore excepturi quasi dignissimos voluptatum molestiae saepe. Maxime, repellat consequatur veritatis eos iure amet consequuntur recusandae.";
+    introText.textContent = "The Rathaus Cafe is known for its resilience – the health department can't keep us down! Come stick it to the man by eating terrible food without washing your hands."
     introContainer.appendChild(introText);
+    
+    introContainer.appendChild(document.createElement("br"));
+
+    let introText2 = document.createElement("p");
+    introText2.textContent = "Rathaus is located on historic (and underwater) Vermin Street in the middle of Seattle's Elliot Bay. Good luck finding us if you don't have a submarine.";
+    introContainer.appendChild(introText2);
 
     let hoursHeader = document.createElement("h2");
     hoursHeader.textContent = "Hours";
