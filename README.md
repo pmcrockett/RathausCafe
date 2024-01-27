@@ -1,6 +1,6 @@
 # Rathaus Cafe
 
-![Rathaus Cafe site](/images/rathuas_cafe.jpg?raw=true "Rathaus Cafe site")
+![Rathaus Cafe site](/images/rathaus_cafe.jpg?raw=true "Rathaus Cafe site")
 
 Live version at https://pmcrockett.github.io/RathausCafe
 
