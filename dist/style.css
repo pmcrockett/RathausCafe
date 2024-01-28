@@ -8,6 +8,26 @@
     src: url(./ArchitectsDaughter-Regular.ttf);
 }
 
+@media screen and (max-width: 480px) {
+    .menu-container {
+        grid-template-columns: auto;
+    }
+
+    .menu-img, .home-img, .map {
+        margin-right: 3vw;
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .menu-container {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+
+    .menu-img, .home-img, .map {
+        margin-right: var(--margin-width);
+    }
+}
+
 :root {
     --bg-col: rgb(255, 253, 250);
     --button-col: rgb(112, 87, 46);
@@ -15,10 +35,13 @@
     --button-bg-col: rgb(255, 243, 199);
     --button-bg-hover-col: rgb(255, 247, 220);
     --button-bg-active-col: rgb(255, 234, 160);
-    --site-width: max(min(75vw, 900px), 350px);
+    --min-site-width: 200px;
+    --max-site-width: 900px;
+    --site-width: max(min(75vw, var(--max-site-width)), var(--min-site-width));
     --margin-width: 24px;
     --margin-double-width: calc(var(--margin-width) * 2);
     --content-width: calc(var(--site-width) - calc(var(--margin-width) * 2));
+    --min-card-content-width: calc(var(--min-site-width) - calc(var(--margin-width) * 4));
     --column-w: max(calc(var(--site-width) / 6), 96px);
     --column-half-w: calc(var(--column-w) * 0.5);
     --menu-img-height: 128px;
@@ -47,6 +70,7 @@ header, .main-container {
 }
 
 nav {
+    margin-top: 10px;
     width: var(--site-width);
     display: grid;
     grid-template-columns: auto 1fr 1fr 1fr;
@@ -58,16 +82,18 @@ nav > img {
 
 .nav-button {
     background-color: var(--button-bg-col);
-    border: 0px;
+    border-width: 0px;
     border-radius: 40px 40px 0px 0px;
     min-height: 64px;
     cursor: pointer;
+    position: relative;
+    bottom: -1px;
 }
 
 .nav-button > span {
     display: inline-block;
     color: var(--button-col);
-    font-size: 24px;
+    font-size: min(24px, 4vw);
     font-family: Architects-Daughter, Arial, Helvetica, sans-serif;
     transform: scaleY(1.3);
     filter: drop-shadow(1px 1px var(--text-shadow-col));
@@ -112,14 +138,14 @@ h1, h2, h3 {
 .home-img {
     width: calc(var(--content-width) * 0.5);
     float: left;
-    margin-right: var(--margin-width);
 }
 
 .hours-container {
     display: grid;
     justify-content: center;
     justify-items: start;
-    grid-template-columns: var(--column-w) auto var(--column-half-w) auto;
+    grid-template-columns: min(var(--column-w), 18vw) auto min(var(--column-half-w), 5vw) auto;
+    align-items: end;
     grid-auto-flow: row;
     grid-auto-rows: auto;
 }
@@ -136,7 +162,6 @@ h1, h2, h3 {
     display: grid;
     gap: var(--margin-width);
     margin-bottom: calc(var(--margin-width) * 0.5);
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     grid-auto-rows: minmax(calc(var(--menu-img-height) + var(--margin-double-width)), 
         max-content);
 }
@@ -155,32 +180,46 @@ h1, h2, h3 {
     margin-bottom: var(--margin-width);
 }
 
+.menu-card-title > h2 {
+    font-size: min(1.5em, 5.5vw);
+}
+
+.menu-card-title > h1 {
+    font-size: min(2em, 8.5vw);
+}
+
 .menu-img {
     float: left;
-    margin-right: var(--margin-width);
-    height: 128px;
+    width: min(160px, var(--min-card-content-width));
 }
 
 .map {
     width: calc(var(--content-width) * 0.5);
     height: calc(var(--content-width) * 0.5);
     float: left;
-    margin-right: var(--margin-width);
+    margin-bottom: var(--margin-width);
 }
 
 .size-to-map {
     min-height: calc(var(--content-width) * 0.5);
+    height: max-content;
 }
 
 .contact-info-container {
     display: grid;
     margin-top: var(--margin-width);
-    gap: calc(var(--margin-width) * 0.5);
+    column-gap: calc(calc(var(--margin-width) * 0.5) - var(--margin-double-width));
+    row-gap: calc(var(--margin-width) * 0.5);
     justify-content: center;
     justify-items: start;
     grid-template-columns: var(--column-half-w) auto;
     grid-auto-flow: row;
     grid-auto-rows: auto;
+    min-width: min(24vw, calc(var(--max-site-width) * 0.3));
+}
+
+.wrap-email {
+    word-break: normal;
 }
 
 .hidden {

@@ -34,7 +34,7 @@ export default function() {
         ["Phone"],
         ["(555) 555-5555"],
         ["Email"],
-        ["info@rathauscafe.nom"],
+        ["info", "@", "rathaus", "cafe", ".nom"],
         ["Visit"],
         ["377 Vermin St."],
         ["Seattle, WA 98185"]
@@ -42,7 +42,19 @@ export default function() {
 
     for (let i = 0; i < infoText.length - 1; i++) {
         let newDiv = document.createElement("div");
-        newDiv.textContent = infoText[i];
+
+        if (infoText[i].length > 1) {
+            for (let j = 0; j < infoText[i].length; j++) {
+                let wbr = document.createElement("wbr");
+                let node = document.createTextNode(infoText[i][j]);
+                newDiv.appendChild(node);
+                newDiv.appendChild(wbr);
+            }
+
+            newDiv.classList.add("wrap-email");
+        } else {
+            newDiv.textContent = infoText[i];
+        }
 
         if (i == infoText.length - 2) {
             let newBr = document.createElement("p");
